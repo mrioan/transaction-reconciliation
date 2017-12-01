@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.tutuka.assessment</groupId>
+        <groupId>com.mario.sample</groupId>
         <artifactId>transaction-reconciliation-root</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -40,13 +40,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.tutuka.assessment</groupId>
+            <groupId>com.mario.sample</groupId>
             <artifactId>transaction-reconciliation-core</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.tutuka.assessment</groupId>
+            <groupId>com.mario.sample</groupId>
             <artifactId>transaction-reconciliation-web</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
