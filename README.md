@@ -137,10 +137,10 @@ Now, for *resemblance*, the system is configured with a single matcher that:
 ## Testing
 This project contains a comprehensive set of tests, including the web layer where both HTML and JSON apis are verified.
  
-In order to run them, just execute: `> mvn clean verify`
+In order to run them, just execute: `$ mvn clean verify`
 
 ### Coverage
-Code coverage is also included. In order to run with coverage do: `> mvn clean verify -Pjacoco` (results can be browsed opening 
+Code coverage is also included. In order to run with coverage do: `$ mvn clean verify -Pjacoco` (results can be browsed opening 
 `jacoco/target/site/jacoco-aggregate/index.html`)
 
 ## Authors
