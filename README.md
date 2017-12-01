@@ -147,3 +147,7 @@ Code coverage is also included. In order to run with coverage do: `> mvn clean v
 
 * **Mario Antollini**
 
+### Note to myself
+
+Full original project is privately stored in gitlab. 
+
