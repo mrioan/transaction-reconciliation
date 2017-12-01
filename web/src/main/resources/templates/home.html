@@ -1,0 +1,105 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{home.title}">|Transaction Reconciliation|</title>
+    <link rel="stylesheet" href="assets/css/buttons.css" />
+    <link rel="stylesheet" href="assets/css/tutuka.css" />
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="assets/js/notify.min.js"></script>
+    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+</head>
+<body class="home">
+<div class="container custom-container">
+    <div class="va-wrapper">
+        <div class="container" >
+
+            <div>
+                <img src="assets/img/TutukaTransparent.png" class="logo" />
+            </div>
+            <div>
+                <p class="title" th:utext="#{home.title}">|Transaction Reconciliation|</p>
+            </div>
+
+
+            <div class="section-header" >
+                <p th:utext="#{home.form.block.text}">|Specify files to compare|</p>
+            </div>
+
+            <fieldset>
+                <div class="container">
+                    <div  class="content">
+
+                        <form id="compare-files-form" th:method="POST" th:async="true" enctype="multipart/form-data" action="/" >
+
+                            <div class="flexbox">
+
+                                <div class="left">
+                                    <input th:type="file" th:name="file1" id="file1" class="inputfile inputfile-4" />
+                                    <label th:for="file1" th:inline="text">
+                                        <figure>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                                                <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path>
+                                            </svg>
+                                        </figure>
+                                        <div th:switch="${reconciliation_result}" th:inline="text">
+                                            <span th:case="null">[[#{home.form.file1.input.label}]]</span>
+                                            <span th:case="*"><th:block th:inline="text" th:text="${reconciliation_result['file1_name']}"/></span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="right">
+                                    <input type="file" th:name="file2" th:id="file2" class="inputfile inputfile-4" />
+                                    <label th:for="file2" th:inline="text">
+                                        <figure>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" >
+                                                <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path>
+                                            </svg>
+                                        </figure>
+                                        <div th:switch="${reconciliation_result}" th:inline="text">
+                                            <span th:case="null">[[#{home.form.file2.input.label}]]</span>
+                                            <span th:case="*"><th:block th:inline="text" th:text="${reconciliation_result['file2_name']}"/></span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <div class="content">
+                                <!-- button component -->
+                                <button th:type="submit" th:form="compare-files-form" th:id="compare-button" class="button styl-material has-spinner" th:inline="text" th:disabled="true">
+                                    <span class="spinner"><img src="assets/img/dualring.svg" width="25" height="25" align="center"/></span>
+                                    <span>[[#{home.form.button.submit}]]</span>
+                                    <svg class="ripple-obj" id="compare-button-svg">
+                                        <use height="10%" width="10%" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ripply-scott" class="js-ripple"></use>
+                                    </svg>
+                                </button>
+                                <!-- /end button component -->
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+
+        <!-- Results block -->
+        <div id="reconciliation-result">
+        </div>
+
+    </div>
+</div>
+
+<footer id="footer">
+    <p style="padding: 0px 15px 10px" th:utext="#{footer.text}">|Powered by Mario|</p>
+</footer>
+
+
+<script src="assets/js/custom-file-input.js"></script>
+
+</body>
+</html>
