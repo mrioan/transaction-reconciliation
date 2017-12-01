@@ -57,8 +57,8 @@ The system provides a JSON api as well. This is a sample request:
   
 ```
 $ curl -v \
-    -F "file1=@ClientMarkoffFile20140113.csv" \
-    -F "file2=@TutukaMarkoffFile20140113.csv" \
+    -F "file1=@samplefile01.csv" \
+    -F "file2=@samplefile02.csv" \
     -H "Accept: application/json" \
     http://tr-mario.herokuapp.com
 ```
