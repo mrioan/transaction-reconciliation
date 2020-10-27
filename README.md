@@ -1,4 +1,4 @@
-# Transaction Reconciliation 
+# Transaction Reconciliation (CSV diff)
 
 ## Introduction
 This system is a webapp tool that can carry out automatic financial reconciliation between two different sets of data.
